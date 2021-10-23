@@ -111,9 +111,9 @@ body {
 
 .header {
   max-width: 100%;
-  height: 80px;
+  height: 70px;
   z-index: 40;
-  background-color: rgba(81, 112, 225, 0.5);
+  background-color: #91a4e9;
 }
 
 .header__inner {
@@ -134,8 +134,13 @@ body {
 
 .header__left .header__logo {
   max-width: 105px;
+  height: 70px;
   margin-right: auto;
   display: block;
+}
+
+.header__left .header__logo img {
+  height: 100%;
 }
 
 .header__right {
@@ -218,11 +223,16 @@ body {
   padding: 0;
   width: 32px;
   height: 32px;
+  border-radius: 4px;
   display: inline-block;
   margin: 0;
   background: #fff image-url('ico-loupe.png') no-repeat center center;
   background-size: 12px;
   border: none;
+}
+
+.search-submit:hover {
+  opacity: 0.6;
 }
 
 .footer {
@@ -275,6 +285,16 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   height: calc(100vh - 80px);
+}
+
+.page-login__title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.page-login__heading {
+  margin-bottom: 24px;
 }
 
 .page-siu {
