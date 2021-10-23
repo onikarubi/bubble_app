@@ -19,12 +19,18 @@
         <nav class="header-nav">
           <div class="header-nav__menu">
             <ul class="header-nav__list">
+            <% if user_signed_in? %>
+              <li class="header-nav__item">
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header-nav__link login' %>
+              </li>
+            <% else %>
               <li class="header-nav__item">
                 <%= link_to 'ログイン', new_user_session_path, class: 'header-nav__link login' %>
               </li>
               <li class="header-nav__item">
                 <%= link_to 'サインアップ', new_user_registration_path, class: 'header-nav__link sign_up' %>
               </li>
+            <% end %>
             </ul>
           </div>
         </nav>
