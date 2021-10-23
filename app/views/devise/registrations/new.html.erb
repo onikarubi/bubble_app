@@ -1,0 +1,40 @@
+<%= render 'layouts/header' %>
+<div class="page-login">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)), class: 'form-login start-form' do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="form-area">
+      <%= f.label :email, class: 'form-area__label' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-area__text' %>
+    </div>
+    <div class="form-area">
+      <%= f.label :password, class: 'form-area__label' %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password", class: 'form-area__text' %>
+    </div>
+    <div class="form-area">
+      <%= f.label :password_confirmation, class: 'form-area__label' %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-area__text' %>
+    </div>
+    <div class="actions">
+      <%= f.submit "ログイン", class: 'form__submit' %>
+    </div>
+  <% end %>
+</div>
+
+<div class="page-login">
+  <form action="post" class="form-login start-form">
+    <div class="form-area">
+      <label for="email" class="form-area__label">メールアドレス</label>
+      <input type="email" class="form-area__text">
+    </div>
+    <div class="form-area">
+      <label for="passoword" class="form-area__label">パスワード</label>
+      <input type="password" class="form-area__text">
+    </div>
+    <input type="submit" value="ログイン" class="form__submit">
+  </form>
+</div>
+
+<%= render "devise/shared/links" %>
