@@ -17,3 +17,360 @@
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+/*==========================================================================
+# reset - ブラウザの差異や不要なスタイルを無くすためのスタイル
+========================================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td,
+small,
+button,
+time,
+figure {
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+li,
+dd {
+  list-style-type: none;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+aside,
+figure,
+figcaption {
+  display: block;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+  image-rendering: -webkit-optimize-contrast;
+  width: 100%;
+  height: auto;
+}
+
+a,
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  font-size: 15px;
+}
+
+.l-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  max-width: 100%;
+  height: 80px;
+  z-index: 40;
+  background-color: rgba(81, 112, 225, 0.5);
+}
+
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 1250px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header__left {
+  margin-right: auto;
+}
+
+.header__left .header__logo {
+  max-width: 105px;
+  margin-right: auto;
+  display: block;
+}
+
+.header__right {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-form {
+  margin-right: 30px;
+}
+
+.header-nav__menu {
+  margin-left: auto;
+}
+
+.header-nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-nav__item {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.header-nav__link {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 14px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.header-nav__link:hover {
+  color: #000;
+  opacity: 0.8;
+}
+
+.header-nav__link.login {
+  background-color: #EAEDFF;
+  color: #647EDC;
+}
+
+.header-nav__link.sign_up {
+  background-color: #647EDC;
+  color: #fff;
+}
+
+.search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.search-text {
+  width: 250px;
+  height: 32px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  padding: 0 8px;
+}
+
+.search-submit {
+  position: absolute;
+  right: 0px;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin: 0;
+  background: #fff image-url('ico-loupe.png') no-repeat center center;
+  background-size: 12px;
+  border: none;
+}
+
+.footer {
+  background-color: rgba(81, 112, 225, 0.5);
+  height: 60px;
+}
+
+.footer__inner {
+  text-align: center;
+}
+
+.footer__text {
+  font-size: 12px;
+  font-family: "Lato", "Arial", "serif";
+  line-height: 60px;
+}
+
+.top {
+  margin-top: 140px;
+  margin-bottom: 120px;
+}
+
+.article {
+  margin-bottom: 30px;
+}
+
+.article:nth-last-child(-n+3) {
+  margin-bottom: 0;
+}
+
+.article:hover {
+  opacity: 0.8;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.page-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: calc(100vh - 80px);
+}
+
+.page-siu {
+  height: calc(100vh - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.page-siu__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.page-siu__left {
+  max-width: 500px;
+  margin-right: auto;
+}
+
+.page-siu__right {
+  margin-left: auto;
+}
+
+.page-siu__title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.page-siu__text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.form-area {
+  margin-bottom: 16px;
+}
+
+.form-area__label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.form-area__label.require::after {
+  content: "必須";
+  color: #ED4956;
+  font-size: 12px;
+  margin-left: 12px;
+}
+
+.form-area__text {
+  width: 100%;
+  border: solid 1px #E6E6E6;
+  height: 40px;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 15px;
+}
+
+.form-area:first-child {
+  margin-bottom: 16px;
+}
+
+.form__submit {
+  width: 100%;
+  margin-top: 50px;
+  height: 40px;
+  border-radius: 4px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  color: #fff;
+  background-color: #647EDC;
+}
+
+.form__submit:hover {
+  opacity: 0.8;
+}
+
+.start-form {
+  width: 360px;
+  border: solid 1px #E6E6E6;
+  border-radius: 4px;
+  padding: 40px 38px 30px;
+  background-color: #fff;
+}
