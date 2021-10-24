@@ -1,0 +1,24 @@
+<%= render partial: 'layouts/header/header_sign', locals: { text: '会員登録はこちら', link: new_user_registration_path } %>
+<div class="page-login">
+  <div class="page-loin__content">
+    <div class="page-login__heading">
+      <h2 class="page-login__title">ログイン</h2>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-login start-form">
+        <div class="form-area">
+          <%= f.label :email, class: 'form-area__label' %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-area__text' %>
+        </div>
+        <div class="form-area">
+          <%= f.label :password, class: 'form-area__label' %>
+          <%= f.password_field :password, autocomplete: "current-password", class: 'form-area__text' %>
+        </div>
+        <div class="button-area">
+          <%= f.submit "ログイン", class: 'form__submit' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

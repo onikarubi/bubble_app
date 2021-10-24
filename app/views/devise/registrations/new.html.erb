@@ -1,0 +1,76 @@
+<%= render partial: 'layouts/header/header_sign', locals: { text: 'ログインはこちら', link: new_user_session_path } %>
+
+<div class="page-siu">
+  <div class="l-inner page-siu__inner">
+    <div class="page-siu__left">
+      <h1 class="page-siu__title">Well come to Bubble！！</h1>
+      <p class="page-siu__text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        minima quis possimus? Neque sit quaerat commodi quisquam laboriosam
+        rerum ea maiores nemo est repellendus vitae quis recusandae, nisi
+        aliquid! Et.
+      </p>
+    </div>
+
+    <div class="page-siu__right">
+      <div class="form-siu start-form">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-area">
+            <%= f.label 'ニックネーム', class: 'form-area__label require' %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-area__text' %>
+          </div>
+          <div class="form-area">
+            <%= f.label :email, class: 'form-area__label require' %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-area__text' %>
+          </div>
+          <div class="form-area">
+            <%= f.label :password, class: 'form-area__label require' %>
+            <%= f.password_field :password, autocomplete: "new-password", class: 'form-area__text' %>
+          </div>
+          <div class="form-area">
+            <%= f.label :password_confirmation, class: 'form-area__label require' %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-area__text require' %>
+          </div>
+
+          <%= f.submit "アカウント登録", class: 'form__submit' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# <div class="page-siu">
+  <div class="l-inner page-siu__inner">
+    <div class="page-siu__left">
+      <h1 class="page-siu__title">Well come to Bubble！！</h1>
+      <p class="page-siu__text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        minima quis possimus? Neque sit quaerat commodi quisquam laboriosam
+        rerum ea maiores nemo est repellendus vitae quis recusandae, nisi
+        aliquid! Et.
+      </p>
+    </div>
+    <div class="page-siu__right">
+      <form action="post" class="form-siu start-form">
+        <div class="form-area">
+          <label for="text" class="form-area__label">ニックネーム</label>
+          <input type="text" class="form-area__text" />
+        </div>
+        <div class="form-area">
+          <label for="email" class="form-area__label require"
+                >メールアドレス</label
+              >
+          <input type="email" class="form-area__text" />
+        </div>
+        <div class="form-area">
+          <label for="passoword" class="form-area__label require"
+                >パスワード</label
+              >
+          <input type="password" class="form-area__text" />
+        </div>
+        <input type="submit" value="アカウント登録" class="form__submit" />
+      </form>
+    </div>
+  </div>
+</div> %>

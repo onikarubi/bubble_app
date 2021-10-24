@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="header__inner">
+    <div class="header__left">
+      <%= link_to root_path, class: 'header__logo' do %>
+        <%= image_tag 'logo_transparent 1.png' %>
+      <% end %>
+    </div>
+    <div class="header__right">
+      <div class="header-form">
+        <form action="get" class="search-form">
+          <input
+                type="text"
+                class="search-text"
+                placeholder="キーワードを検索"
+              />
+            <input type="submit" class="search-submit" value=""/>
+          </form>
+        </div>
+        <nav class="header-nav">
+          <div class="header-nav__menu">
+            <ul class="header-nav__list">
+            <% if user_signed_in? %>
+              <li class="header-nav__item">
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header-nav__link login' %>
+              </li>
+            <% else %>
+              <li class="header-nav__item">
+                <%= link_to 'ログイン', new_user_session_path, class: 'header-nav__link login' %>
+              </li>
+              <li class="header-nav__item">
+                <%= link_to 'サインアップ', new_user_registration_path, class: 'header-nav__link sign_up' %>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
