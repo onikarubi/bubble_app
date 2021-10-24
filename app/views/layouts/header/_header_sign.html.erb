@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="header__inner">
+    <div class="header__left">
+      <%= link_to root_path, class: 'header__logo' do %>
+        <%= image_tag 'logo_transparent 1.png' %>
+      <% end %>
+    </div>
+    <div class="header__right">
+        <nav class="header-nav">
+          <div class="header-nav__menu">
+            <ul class="header-nav__list">
+              <li class="header-nav__item">
+                <%= link_to text, link, class: 'header-nav__link sign_up' %>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
