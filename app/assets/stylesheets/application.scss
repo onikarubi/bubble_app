@@ -165,6 +165,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  align-items: center;
 }
 
 .header-nav__item {
@@ -197,6 +198,23 @@ body {
   color: #fff;
 }
 
+.user-icon-img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 16px;
+  // border: solid 1px #000;
+}
+
+.user-icon-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover !important;
+  object-fit: cover !important;
+}
+
 .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,7 +244,7 @@ body {
   border-radius: 4px;
   display: inline-block;
   margin: 0;
-  background: #fff image-url('ico-loupe.png') no-repeat center center;
+  background: #fff image-url('ico-loupe') no-repeat center center;
   background-size: 12px;
   border: none;
 }

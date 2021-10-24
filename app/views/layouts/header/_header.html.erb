@@ -23,6 +23,14 @@
               <li class="header-nav__item">
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header-nav__link login' %>
               </li>
+              <li class="header-nav__item">
+                <%= link_to user_path(current_user), class: 'user-icon-img' do %>
+                  <%= image_tag current_user.image.url, alt: 'user-icon' %>
+                <% end %>
+              </li>
+              <li class="header-nav__item">
+                <%= link_to '投稿する', new_article_path, class: 'header-nav__link sign_up' %>
+              </li>
             <% else %>
               <li class="header-nav__item">
                 <%= link_to 'ログイン', new_user_session_path, class: 'header-nav__link login' %>
