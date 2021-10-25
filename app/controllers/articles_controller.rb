@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all.order('updated_at desc')
+    @articles = Article.includes(:user).order(updated_at: :desc)
   end
 
   def show
-
+    @article = Article.find(params[:id])
   end
 
   def new
@@ -21,6 +21,9 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
+
+    redirect_to root_path if @article.user != current_user.id
   end
 
   private
