@@ -1,2 +1,31 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<%= render partial: 'layouts/header/header' %>
+
+<div class="page-article_post">
+  <div class="l-inner">
+    <div class="article-form">
+      <%= form_with model: @article, local: true do |f|  %>
+        <div class="article-form__group">
+          <%= f.text_field :title, autofocus: true, class: 'article-form__input article-form__title', placeholder: '記事タイトル' %>
+        </div>
+
+        <div class="article-form__group">
+          <%= f.text_area :content, autofocus: true, class: 'article-form__input article-form__content', placeholder: "記事本文" %>
+        </div>
+
+        <div class="article-form__group">
+          <label class='article-form__image-label'>
+            サムネイルの画像
+            <%= f.file_field :image, class: 'article-form__input article-form__image', id: 'file-upload' %>
+          </label>
+
+          <span id="file-text">選択されていません</span>
+        </div>
+
+        <div class="article-form__footer">
+          <%= f.submit '投稿する', class: 'link-btn default-btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
