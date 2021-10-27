@@ -18,6 +18,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
+
 /*==========================================================================
 # reset - ブラウザの差異や不要なスタイルを無くすためのスタイル
 ========================================================================== */
@@ -90,13 +92,14 @@ img {
   vertical-align: bottom;
   image-rendering: -webkit-optimize-contrast;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 a,
 a:hover {
   cursor: pointer;
   text-decoration: none;
+  color: #000;
 }
 
 body {
@@ -165,6 +168,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .header-nav__item {
@@ -196,7 +202,21 @@ body {
   background-color: #647EDC;
   color: #fff;
 }
+.user-icon-img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 16px;
+}
 
+.user-icon-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover !important;
+  object-fit: cover !important;
+}
 .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -205,6 +225,12 @@ body {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
+}
+
+.article_search {
+  input[type='submit'] {
+
+  }
 }
 
 .search-text {
@@ -223,12 +249,16 @@ body {
   padding: 0;
   width: 32px;
   height: 32px;
-  border-radius: 4px;
   display: inline-block;
   margin: 0;
-  background: #fff image-url('ico-loupe.png') no-repeat center center;
+  background: #fff image-url('ico-loupe') no-repeat center center;
   background-size: 12px;
   border: none;
+  border-radius: 4px;
+}
+
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }
 
 .search-submit:hover {
@@ -236,7 +266,7 @@ body {
 }
 
 .footer {
-  background-color: rgba(81, 112, 225, 0.5);
+  background-color: #91a4e9;
   height: 60px;
 }
 
@@ -338,6 +368,158 @@ body {
   line-height: 1.7;
 }
 
+.user-icon-img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 12px;
+}
+
+.user-icon-img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.page-article_post {
+  margin-top: 45px;
+}
+
+.article-form {
+  width: 100%;
+}
+
+.article-form__group {
+  margin-bottom: 10px;
+}
+
+.article-form__input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.article-form__title {
+  height: 60px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.article-form__content {
+  height: 500px;
+  font-size: 18px;
+  resize: none;
+}
+
+.article-form__image {
+  display: none;
+}
+
+.article-form__image-label {
+  color: #000;
+  background-color: #e9e8e8;
+  padding: 5px;
+  border: solid 1px #000;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.article-form__image-label:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#file-text {
+  margin-left: 10px;
+}
+
+.article-post {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.article-post__inner {
+  max-width: 720px;
+}
+
+.article-post__thumbnail {
+  width: 100%;
+  height: 385px;
+  margin-bottom: 70px;
+}
+
+.article-post__thumbnail img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+}
+
+.article-post__heading {
+  margin-bottom: 50px;
+}
+
+.article-post__post-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.article-post__user-icon {
+  border-radius: 50%;
+  display: inline-block;
+  width: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #000;
+  margin-right: 14px;
+  height: 40px;
+}
+
+.article-post__user-icon img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.article-post__user-post-info {
+  font-size: 14px;
+}
+
+.article-post__user-name {
+  color: #000;
+}
+
+.article-post__post-time {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: rgba(0, 0, 0, 0.514);
+}
+
+.article-post__title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+
+.article-post__content {
+  line-height: 1.75;
+  letter-spacing: 0.8px;
+  font-size: 18px;
+  margin-bottom: 100px;
+  word-break: break-all;
+}
+
 .form-area {
   margin-bottom: 16px;
 }
@@ -393,4 +575,88 @@ body {
   border-radius: 4px;
   padding: 40px 38px 30px;
   background-color: #fff;
+}
+
+.link-btn {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 14px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+}
+
+.link-btn:hover {
+  color: #000;
+  opacity: 0.8;
+}
+
+.link-btn.light-btn {
+  background-color: #EAEDFF;
+  color: #647EDC;
+}
+
+.link-btn.default-btn {
+  background-color: #647EDC;
+  color: #fff;
+}
+
+.page-article_post {
+  margin-top: 45px;
+}
+
+.article-form {
+  width: 100%;
+}
+
+.article-form__group {
+  margin-bottom: 10px;
+}
+
+.article-form__input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.article-form__title {
+  height: 60px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.article-form__content {
+  height: 500px;
+  font-size: 18px;
+  resize: none;
+}
+
+.article-form__image {
+  display: none;
+}
+
+.article-form__image-label {
+  color: #000;
+  background-color: #e9e8e8;
+  padding: 5px;
+  border: solid 1px #000;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.article-form__image-label:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#file-text {
+  margin-left: 10px;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  max-height: 200px;
 }

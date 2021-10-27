@@ -7,14 +7,12 @@
     </div>
     <div class="header__right">
       <div class="header-form">
-        <form action="get" class="search-form">
-          <input
-                type="text"
-                class="search-text"
-                placeholder="キーワードを検索"
-              />
-            <input type="submit" class="search-submit" value=""/>
-          </form>
+          <div class="search-form">
+            <%= search_form_for @q do |f| %>
+              <%= f.search_field :title_or_content_cont, class: 'search-text', placeholder: 'タイトルまたはキーワード' %>
+              <%= f.submit '', class: 'search-submit' %>
+            <% end %>
+          </div>
         </div>
         <nav class="header-nav">
           <div class="header-nav__menu">
@@ -22,6 +20,14 @@
             <% if user_signed_in? %>
               <li class="header-nav__item">
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header-nav__link login' %>
+              </li>
+              <li class="header-nav__item">
+                <%= link_to user_path(current_user), class: 'user-icon-img' do %>
+                  <%= image_tag current_user.image.url, alt: 'user-icon' %>
+                <% end %>
+              </li>
+              <li class="header-nav__item">
+                <%= link_to '投稿する', new_article_path, class: 'header-nav__link sign_up' %>
               </li>
             <% else %>
               <li class="header-nav__item">

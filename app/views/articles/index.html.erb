@@ -1,1 +1,25 @@
-<%= render partial: 'layouts/header/header' %>
+<%= render 'layouts/header/header', q: @q %>
+
+<div class="top">
+  <div class="l-inner">
+    <div class="row">
+      <% @articles.each do |article| %>
+        <article class="col-md-4 article">
+          <div class="card" style="width: 18rem">
+            <%= image_tag article.image.url, class: 'card-img-top', alt: 'samne' %>
+            <div class="card-body">
+              <h5 class="card-title fw-bold"><%= article.title %></h5>
+              <p class="card-text">
+                <%= article.content %>
+              </p>
+              <div class="py-2 favo-icon">
+                <i class="far fa-heart mx-1"></i><span class="ml-1">1</span>
+              </div>
+              <%= link_to '', article_path(article), class: 'stretched-link' %>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</div>

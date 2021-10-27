@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
   def update_resource(resource, params)
     resource.update_without_password(params)
   end
+
+  def search_articles
+    @q = Article.ransack(params[:q])
+  end
 end
