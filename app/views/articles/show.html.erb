@@ -1,2 +1,42 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<%= render 'layouts/header/header' %>
+
+
+<div class="article-page article-post">
+  <div class="article-post__inner l-inner">
+    <div class="article-post__thumbnail">
+      <% if @article.image? %>
+        <%= image_tag @article.image.url, alt: 'article-img' %>
+      <% else %>
+        <%= image_tag 'no_image_square.jpeg', alt: 'article-img' %>
+      <% end %>
+    </div>
+
+    <div class="article-post__heading">
+      <div class="article-post__post-info">
+        <%= link_to user_path(@article.user), class: 'article-post__user-icon' do %>
+
+          <%= image_tag @article.user.image.url %>
+
+        <% end %>
+
+        <div class="article-post__user-post-info">
+          <%= link_to @article.user.name, user_path(@article.user), class: 'article-post__user-name' %>
+          <span class="article-post__post-time">
+            <time datetime="2021/10/1"><%= l @article.created_at %></time>
+          </span>
+        </div>
+      </div>
+
+      <h1 class="article-post__title"><%= @article.title %></h1>
+
+      <a href="#" class="article-post__favo">
+        <i class="far fa-heart"></i>
+        <span class="favorite-count">0</span>
+      </a>
+    </div>
+
+    <div class="article-post__content">
+      <p><%= safe_join(@article.content.split("\n"), tag(:br)) %></p>
+    </div>
+  </div>
+</div>
