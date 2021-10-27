@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: %i[show index]
+  before_action :search_articles, only: %i[index show new edit]
+
   def index
-    @articles = Article.includes(:user).order(updated_at: :desc)
+    @q = Article.ransack(params[:q])
+    @articles = @q.result(distinct: true).includes(:user).order(updated_at: :desc)
   end
 
   def show

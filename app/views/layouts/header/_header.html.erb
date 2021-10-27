@@ -7,14 +7,12 @@
     </div>
     <div class="header__right">
       <div class="header-form">
-        <form action="get" class="search-form">
-          <input
-                type="text"
-                class="search-text"
-                placeholder="キーワードを検索"
-              />
-            <input type="submit" class="search-submit" value=""/>
-          </form>
+          <div class="search-form">
+            <%= search_form_for @q do |f| %>
+              <%= f.search_field :title_or_content_cont, class: 'search-text', placeholder: 'タイトルまたはキーワード' %>
+              <%= f.submit '', class: 'search-submit' %>
+            <% end %>
+          </div>
         </div>
         <nav class="header-nav">
           <div class="header-nav__menu">
