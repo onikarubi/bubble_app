@@ -29,10 +29,9 @@
 
       <h1 class="article-post__title"><%= @article.title %></h1>
 
-      <a href="#" class="article-post__favo">
-        <i class="far fa-heart"></i>
-        <span class="favorite-count">0</span>
-      </a>
+      <div class="article-post__favo" id="favo-btn_<%= @article.id %>">
+        <%= render partial: 'favorites/favorite', locals: { article: @article } %>
+      </div>
     </div>
 
     <div class="article-post__content">

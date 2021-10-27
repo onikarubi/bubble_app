@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     root to: 'articles#index'
   end
 
-  resources :articles
+  resources :articles do
+    resource :favorites, only: %i[create destroy]
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
