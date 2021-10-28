@@ -12,8 +12,8 @@
               <p class="card-text">
                 <%= article.content %>
               </p>
-              <div class="py-2 favo-icon">
-                <i class="far fa-heart mx-1"></i><span class="ml-1">1</span>
+              <div class="article-post__favo article-post__favo-card" id="favo-btn_<%= article.id %>">
+                <%= render partial: 'favorites/favorite', locals: { article: article } %>
               </div>
               <%= link_to '', article_path(article), class: 'stretched-link' %>
             </div>

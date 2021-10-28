@@ -11,6 +11,5 @@ RUN apt-get update && apt-get install -y \
 RUN gem install bundler
 
 WORKDIR /implementation
-# ENV DATABASE_PASSWORD=${DATABASE_PASSWORD}
 COPY Gemfile Gemfile.lock /implementation/
 RUN bundle install

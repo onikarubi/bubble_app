@@ -660,3 +660,13 @@ body {
   width: 100%;
   max-height: 200px;
 }
+
+.article-post__favo {
+  i, span {
+    color: #ED4956;
+  }
+
+  &-card {
+    margin-top: 10px;
+  }
+}
