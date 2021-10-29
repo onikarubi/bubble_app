@@ -1,0 +1,4 @@
+$(".article-comment__body").html("<%= j(render 'comments/comments', comments: @comments) %>");
+
+$('textarea').val('');
+$('.user-comment__file').val('');
