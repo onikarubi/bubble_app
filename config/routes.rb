@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     resource :favorites, only: %i[create destroy]
-    resources :comments, only: %i[create destroy]
+    resources :comments, only: %i[create destroy edit update]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

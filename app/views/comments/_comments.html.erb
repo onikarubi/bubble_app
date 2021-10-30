@@ -1,28 +1,7 @@
 <% comments.each do |comment| %>
   <section class="user-comment" id="user-comment-<%= comment.id %>">
-    <div class="user-comment__heading">
-      <div class="user-comment__heading-left">
-        <%= link_to user_path(comment.user), class: 'user-comment__profile-img' do %>
-          <%= image_tag comment.user.image.url, alt: 'user-icon' %>
-        <% end %>
-        <%= link_to comment.user.name, user_path(comment.user), class: 'user-comment__profile-name' %>
-      </div>
-      <div class="user-comment__heading-right">
-        <time><%= l comment.created_at %></time>
-        <span class="user-comment__heading-menu">
-          <%= image_tag 'carbon_overflow-menu-horizontal.png', alt: 'carbon_overflow-menu-horizontal' %>
-        </span>
-      </div>
-    </div>
-    <div class="user-comment__content">
-      <% if comment.image? %>
-        <div class="user-comment__img">
-          <%= image_tag comment.image.url, alt: 'comment-img', class: 'user-comment__file' %>
-        </div>
-      <% end %>
-      <p class="user-comment__content-text">
-        <%= safe_join(comment.comment_content.split("\n"), tag(:br)) %>
-      </p>
-    </div>
+    <%= render 'comments/comment', comment: comment %>
   </section>
 <% end %>
+
+
