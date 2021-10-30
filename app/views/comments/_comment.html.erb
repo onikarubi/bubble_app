@@ -1,0 +1,37 @@
+<div class="user-comment__heading">
+  <div class="user-comment__heading-left">
+    <%= link_to user_path(comment.user), class: 'user-comment__profile-img' do %>
+      <%= image_tag comment.user.image.url, alt: 'user-icon' %>
+    <% end %>
+    <%= link_to comment.user.name, user_path(comment.user), class: 'user-comment__profile-name' %>
+  </div>
+  <div class="user-comment__heading-right">
+    <time><%= l comment.created_at %></time>
+    <div class="dropdown user-comment__heading-menu">
+      <button
+        class="user-comment__heading-menu-btn"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+      >
+        <%= image_tag 'carbon_overflow-menu-horizontal.png', alt: 'carbon_overflow-menu-horizontal' %>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <%= link_to '編集', edit_article_comment_path(comment.article_id, comment.id), class: 'dropdown-item', remote: true %>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true, class: 'dropdown-item text-danger' %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="user-comment__content">
+  <% if comment.image? %>
+    <div class="user-comment__img">
+      <%= image_tag comment.image.url, alt: 'comment-img', class: 'user-comment__file' %>
+    </div>
+  <% end %>
+  <p class="user-comment__content-text">
+    <%= safe_join(comment.comment_content.split("\n"), tag(:br)) %>
+  </p>
+</div>

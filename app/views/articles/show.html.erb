@@ -51,36 +51,7 @@
 
   <div class="article-comment__footer">
     <div class="comment-form">
-      <div class="comment-form__heading">
-        <%= link_to user_path(current_user), class: 'user-comment__profile-img' do %>
-          <%= image_tag current_user.image.url, alt: 'user-img' %>
-        <% end %>
-
-        <div class="comment-form__title">投稿する</div>
-      </div>
-
-      <%= form_with model: [@article, @comment], local: false, remote: true do |f| %>
-        <div class="comment-form__body">
-          <%= f.text_area :comment_content, class: 'comment-form__text', placeholder: 'コメント入力' %>
-        </div>
-
-        <div class="comment-form__footer">
-          <div class="comment-form__img">
-            <label class="comment-form__img-btn">
-              <%= f.file_field :image, id: 'file-upload' %>
-              画像を選択
-            </label>
-            <span id="file-text">選択されていません</span>
-          </div>
-
-          <%= f.hidden_field :article_id, value: @article.id %>
-
-          <div class="comment-form__submit">
-            <%= f.submit "投稿", class: 'link-btn default-btn' %>
-          </div>
-        </div>
-      <% end %>
-
+      <%= render 'comments/comment_form', article: @article, comment: @comment, type: 'post' %>
     </div>
   </div>
 </div>
