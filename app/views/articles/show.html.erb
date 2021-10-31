@@ -1,6 +1,5 @@
 <%= render 'layouts/header/header', q: @q %>
 
-
 <div class="article-page article-post">
   <div class="article-post__inner l-inner">
     <div class="article-post__thumbnail">
@@ -55,3 +54,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  const replyCommentUser = (user) => {
+    $('.comment-form__text').val(`>> ${user} \n`);
+  }
+</script>

@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def create
     @article = Article.find(params[:article_id])
-    @comments = @article.comments.includes(:user).order(created_at: :desc)
+    @comments = @article.comments.includes(:user).order('created_at')
     @comment = current_user.comments.build(comment_params)
     @comment.user_id = current_user.id
 

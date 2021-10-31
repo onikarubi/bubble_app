@@ -1,4 +1,5 @@
 $(".article-comment__body").html("<%= j(render 'comments/comments', comments: @comments) %>");
 
 $('textarea').val('');
-$('.user-comment__file').val('');
+$('#file-text').text('選択されていません');
+$('#file-upload').val('');
