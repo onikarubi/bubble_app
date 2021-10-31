@@ -1,7 +1,9 @@
-<% comments.each do |comment| %>
-  <section class="user-comment" id="user-comment-<%= comment.id %>">
-    <%= render 'comments/comment', comment: comment %>
-  </section>
+<% if comments.any? %>
+  <% comments.each do |comment| %>
+    <section class="user-comment" id="user-comment-<%= comment.id %>">
+      <%= render 'comments/comment', comment: comment %>
+    </section>
+  <% end %>
 <% end %>
 
 

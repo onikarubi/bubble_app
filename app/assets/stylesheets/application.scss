@@ -468,7 +468,7 @@ body {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .article-post__user-icon {
@@ -506,15 +506,15 @@ body {
 }
 
 .article-post__title {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   line-height: 1.5;
   letter-spacing: 0.1em;
 }
 
 .article-post__content {
-  line-height: 1.75;
+  line-height: 1.8;
   letter-spacing: 0.8px;
   font-size: 18px;
   margin-bottom: 100px;
@@ -820,7 +820,7 @@ article-comment {
 }
 
 .comment-form__img-btn {
-  padding: 8px 14px;
+  padding: 5px 10px;
   background-color: #E9ECEE;
   border: solid 1px #000;
 }

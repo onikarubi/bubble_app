@@ -16,11 +16,19 @@
         <%= image_tag 'carbon_overflow-menu-horizontal.png', alt: 'carbon_overflow-menu-horizontal' %>
       </button>
       <ul class="dropdown-menu dropdown-menu-end">
-        <li>
-          <%= link_to '編集', edit_article_comment_path(comment.article_id, comment.id), class: 'dropdown-item', remote: true %>
-        </li>
-        <li><hr class="dropdown-divider"></li>
-        <li><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true, class: 'dropdown-item text-danger' %></li>
+        <% if user_signed_in? %>
+          <% if comment.user == current_user %>
+            <li>
+              <%= link_to '編集', edit_article_comment_path(comment.article_id, comment.id), class: 'dropdown-item', remote: true %>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true, class: 'dropdown-item text-danger' %></li>
+          <% elsif comment.user != current_user %>
+            <li>
+              <div onclick="replyCommentUser('<%= comment.user.name %>')" class="dropdown-item reply">返信</div>
+            </li>
+          <% end %> <%# if comment.user == current_user %>
+        <% end  %> <%# if user_signed_in? %>
       </ul>
     </div>
   </div>
